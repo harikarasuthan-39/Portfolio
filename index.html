@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Harikara Suthan — AI & Data Science student portfolio. Currently learning machine learning, deep learning and applied AI, building toward an AI/ML engineering career.">
+  <meta name="keywords" content="AI, Data Science, Machine Learning, Portfolio, Student">
+  <meta name="author" content="Harikara Suthan">
+
+  <title>Harikara Suthan — AI & Data Science Portfolio</title>
+
+  <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============ AMBIENT LIVING BACKGROUND ============ -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-grid"></div>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+  <div class="light-ray"></div>
+  <div class="spotlight" id="spotlight"></div>
+
+  <!-- ============ CUSTOM CURSOR ============ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ============ BOOT SCREEN ============ -->
+  <div id="boot-screen" role="dialog" aria-label="Loading">
+    <div class="boot-inner">
+      <div class="boot-logo">HARIKARA_SUTHAN // SYSTEM BOOT</div>
+      <div class="boot-lines" id="bootLines" aria-live="polite"></div>
+      <div class="boot-bar-track"><div class="boot-bar-fill" id="bootBar"></div></div>
+      <div class="boot-pct" id="bootPct">0%</div>
+      <button id="enter-btn">
+        <i class="fa-solid fa-power-off"></i> ENTER AI UNIVERSE
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar glass" id="navbar">
+    <a href="#main" class="nav-brand">
+      <img src="assets/logo.png" alt="">
+      <span>Harikara</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-nav>About</a></li>
+      <li><a href="#skills" data-nav>Skills</a></li>
+      <li><a href="#projects" data-nav>Projects</a></li>
+      <li><a href="#timeline" data-nav>Timeline</a></li>
+      <li><a href="#certifications" data-nav>Certs</a></li>
+      <li><a href="#contact" data-nav>Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="sound-toggle" id="soundToggle" aria-label="Toggle sound" title="Toggle sound">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">CLOSE ✕</button>
+    <a href="#about" data-nav>About</a>
+    <a href="#skills" data-nav>Skills</a>
+    <a href="#projects" data-nav>Projects</a>
+    <a href="#timeline" data-nav>Timeline</a>
+    <a href="#certifications" data-nav>Certs</a>
+    <a href="#contact" data-nav>Contact</a>
+  </div>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal in">
+          <div class="eyebrow">AI &amp; Data Science Student</div>
+          <h1 class="hero-name">Harikara<br>Suthan</h1>
+          <div class="hero-role-line">
+            <span class="role-prefix">// becoming an</span>
+            <span id="roleTyper"></span>
+          </div>
+          <p class="hero-desc">
+            3rd-year AI &amp; Data Science student building real skill, one model at a time — currently deep in machine learning fundamentals and applied AI, with a public roadmap and projects in progress below.
+          </p>
+          <div class="hero-actions">
+            <a href="#skills" class="btn btn-primary" data-nav><i class="fa-solid fa-rocket"></i> Explore My Universe</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-solid fa-download"></i> Download Resume</a>
+          </div>
+          <div class="hero-socials">
+            <a href="#" class="icon-link" data-social="github" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="icon-link" data-social="linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="icon-link" data-social="email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="hologram reveal in">
+          <div class="holo-ring"></div>
+          <div class="holo-ring r2"></div>
+          <div class="holo-frame">
+            <img src="assets/profile.png" alt="Harikara Suthan">
+          </div>
+          <div class="holo-tag">STATUS: LEARNING</div>
+        </div>
+      </div>
+      <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Digital Identity</div>
+          <h2 class="section-title">About the mind behind this</h2>
+        </div>
+        <div class="about-grid">
+          <div class="glass about-card reveal">
+            <p>I'm <strong>Harikara Suthan</strong>, a third-year <strong>AI &amp; Data Science</strong> student. I'm early in my journey — most of what you see on this site is a roadmap and work in progress, not a finished résumé of achievements.</p>
+            <p>I'd rather build this site honestly than pad it with things I haven't actually done yet. Right now that means going deep on Python, classical ML, and the fundamentals of deep learning, before moving into applied AI work like LLMs and retrieval-augmented generation.</p>
+            <p>If you're a recruiter, mentor, or fellow student — this page will keep updating as the real projects, certifications, and skills get checked off the list below.</p>
+          </div>
+          <div class="glass status-card reveal">
+            <div class="status-row"><span><span class="pulse-dot"></span>Current focus</span><span>Machine Learning</span></div>
+            <div class="status-row"><span>Year</span><span>3rd Year</span></div>
+            <div class="status-row"><span>Track</span><span>AI &amp; Data Science</span></div>
+            <div class="status-row"><span>Status</span><span>Open to internships</span></div>
+            <div class="status-row"><span>Base language</span><span>Python</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SNAPSHOT / STATS ============ -->
+    <section id="snapshot">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="glass stat-card reveal"><div class="stat-num" data-count="3">0</div><div class="stat-label">YEAR OF STUDY</div></div>
+          <div class="glass stat-card reveal"><div class="stat-num" data-count="6">0</div><div class="stat-label">SKILLS IN ACTIVE PRACTICE</div></div>
+          <div class="glass stat-card reveal"><div class="stat-num" data-count="4">0</div><div class="stat-label">PROJECTS IN THE LAB</div></div>
+          <div class="glass stat-card reveal"><div class="stat-num" data-count="12">0</div><div class="stat-label">ROADMAP MILESTONES</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILL GALAXY ============ -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Skill Galaxy</div>
+          <h2 class="section-title">What I'm building with</h2>
+          <p class="section-sub">Honest levels, not inflated ones — yellow means comfortable, white means actively learning, gray means just getting started.</p>
+        </div>
+        <div class="skill-galaxy">
+          <div class="skill-node glass" style="animation-delay:.0s"><span class="dot dot-comfortable"></span>Python <span class="lvl">COMFORTABLE</span></div>
+          <div class="skill-node glass" style="animation-delay:.3s"><span class="dot dot-comfortable"></span>SQL <span class="lvl">COMFORTABLE</span></div>
+          <div class="skill-node glass" style="animation-delay:.6s"><span class="dot dot-learning"></span>Machine Learning <span class="lvl">LEARNING</span></div>
+          <div class="skill-node glass" style="animation-delay:.9s"><span class="dot dot-learning"></span>Statistics &amp; Math <span class="lvl">LEARNING</span></div>
+          <div class="skill-node glass" style="animation-delay:1.2s"><span class="dot dot-learning"></span>Deep Learning <span class="lvl">LEARNING</span></div>
+          <div class="skill-node glass" style="animation-delay:1.5s"><span class="dot dot-exploring"></span>PyTorch <span class="lvl">EXPLORING</span></div>
+          <div class="skill-node glass" style="animation-delay:1.8s"><span class="dot dot-exploring"></span>TensorFlow <span class="lvl">EXPLORING</span></div>
+          <div class="skill-node glass" style="animation-delay:2.1s"><span class="dot dot-exploring"></span>NLP <span class="lvl">EXPLORING</span></div>
+          <div class="skill-node glass" style="animation-delay:2.4s"><span class="dot dot-exploring"></span>Computer Vision <span class="lvl">EXPLORING</span></div>
+          <div class="skill-node glass" style="animation-delay:2.7s"><span class="dot dot-exploring"></span>Generative AI / LLMs <span class="lvl">EXPLORING</span></div>
+          <div class="skill-node glass" style="animation-delay:3.0s"><span class="dot dot-learning"></span>Power BI <span class="lvl">LEARNING</span></div>
+          <div class="skill-node glass" style="animation-delay:3.3s"><span class="dot dot-exploring"></span>Cloud (AWS/Azure) <span class="lvl">EXPLORING</span></div>
+        </div>
+        <div class="skill-legend">
+          <span><span class="dot dot-comfortable"></span>Comfortable</span>
+          <span><span class="dot dot-learning"></span>Learning</span>
+          <span><span class="dot dot-exploring"></span>Exploring</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECT LABORATORY ============ -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Project Laboratory</div>
+          <h2 class="section-title">Currently building</h2>
+          <p class="section-sub">No fake finished products here — these are real in-progress and planned builds, tied directly to my learning roadmap.</p>
+        </div>
+        <div class="projects-grid">
+
+          <div class="glass project-card reveal">
+            <div class="project-thumb">
+              <img src="assets/projects/cyberguard.jpg" alt="CyberGuard AI thumbnail">
+              <span class="project-status">IN PROGRESS</span>
+            </div>
+            <div class="project-body">
+              <h3>CyberGuard AI</h3>
+              <p>A deep learning model that flags suspicious network traffic patterns — my first real dive into applied DL beyond coursework notebooks.</p>
+              <div class="tech-tags"><span>Python</span><span>PyTorch</span><span>Pandas</span></div>
+              <div class="project-actions">
+                <a href="#" class="btn btn-ghost"><i class="fa-brands fa-github"></i> Repo</a>
+                <button class="btn btn-ghost" disabled title="Ships once complete"><i class="fa-solid fa-lock"></i> Demo soon</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass project-card reveal">
+            <div class="project-thumb">
+              <img src="assets/projects/dait-ai.png" alt="College Assistant thumbnail">
+              <span class="project-status">IN PROGRESS</span>
+            </div>
+            <div class="project-body">
+              <h3>College Assistant — RAG Assistant</h3>
+              <p>A document-aware assistant using retrieval-augmented generation over a small knowledge base — my entry point into applied LLM work.</p>
+              <div class="tech-tags"><span>LangChain</span><span>Vector DB</span><span>LLM API</span></div>
+              <div class="project-actions">
+                <a href="#" class="btn btn-ghost"><i class="fa-brands fa-github"></i> Repo</a>
+                <button class="btn btn-ghost" disabled title="Ships once complete"><i class="fa-solid fa-lock"></i> Demo soon</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass project-card reveal">
+            <div class="project-thumb">
+              <img src="assets/projects/resume-analyser.jpg" alt="Resume Analyzer thumbnail">
+              <span class="project-status">PLANNED</span>
+            </div>
+            <div class="project-body">
+              <h3>Resume Analyzer</h3>
+              <p>An NLP tool that parses a resume and scores it against a job description — planned right after I finish the NLP fundamentals module.</p>
+              <div class="tech-tags"><span>spaCy</span><span>NLP</span><span>Python</span></div>
+              <div class="project-actions">
+                <a href="#" class="btn btn-ghost"><i class="fa-brands fa-github"></i> Repo</a>
+                <button class="btn btn-ghost" disabled title="Not started yet"><i class="fa-solid fa-lock"></i> Demo soon</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass project-card reveal">
+            <div class="project-thumb">
+              <img src="assets/projects/career-ai.jpg" alt="Career Path AI thumbnail">
+              <span class="project-status">PLANNED</span>
+            </div>
+            <div class="project-body">
+              <h3>Career Path Recommender</h3>
+              <p>A classical ML recommender that suggests career tracks from a student's skills and interests — my planned capstone for the ML fundamentals phase.</p>
+              <div class="tech-tags"><span>scikit-learn</span><span>Pandas</span><span>Streamlit</span></div>
+              <div class="project-actions">
+                <a href="#" class="btn btn-ghost"><i class="fa-brands fa-github"></i> Repo</a>
+                <button class="btn btn-ghost" disabled title="Not started yet"><i class="fa-solid fa-lock"></i> Demo soon</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TIMELINE ============ -->
+    <section id="timeline">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Timeline</div>
+          <h2 class="section-title">How this is unfolding</h2>
+        </div>
+        <div class="timeline" id="timelineEl">
+          <div class="timeline-line"></div>
+          <div class="timeline-fill" id="timelineFill"></div>
+          <div class="timeline-rocket" id="timelineRocket">🚀</div>
+
+          <div class="timeline-item reveal">
+            <div class="t-marker">24</div>
+            <div class="t-year">2024</div>
+            <h4>Started the AI &amp; Data Science track</h4>
+            <p>Began formal coursework — statistics, programming fundamentals, and the first contact with machine learning concepts.</p>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="t-marker">25</div>
+            <div class="t-year">2025</div>
+            <h4>Built the fundamentals</h4>
+            <p>Strengthened Python and SQL, worked through core ML algorithms, and started exploring data analysis tools.</p>
+          </div>
+
+          <div class="timeline-item now reveal">
+            <div class="t-marker">26</div>
+            <div class="t-year">2026 <span class="now-badge">NOW</span></div>
+            <h4>Going deep on applied AI</h4>
+            <p>Following a structured roadmap through deep learning and applied LLM work, while building the four projects in the lab above.</p>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="t-marker">27</div>
+            <div class="t-year">2027 · Future</div>
+            <h4>Internship &amp; placement ready</h4>
+            <p>Target: a completed portfolio, real internship experience, and a focused specialization to start a career on.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATION VAULT ============ -->
+    <section id="certifications">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Certification Vault</div>
+          <h2 class="section-title">In progress, not invented</h2>
+        </div>
+        <div class="cert-grid">
+          <div class="glass cert-card reveal">
+            <div class="cert-icon"><i class="fa-solid fa-cloud"></i></div>
+            <h4>AWS Cloud Practitioner</h4>
+            <div class="cert-status">PLANNED · Q3 2026</div>
+          </div>
+          <div class="glass cert-card reveal">
+            <div class="cert-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h4>Google Data Analytics</h4>
+            <div class="cert-status">PLANNED · Q4 2026</div>
+          </div>
+          <div class="cert-empty reveal">
+            <div class="plus">+</div>
+            <strong>Your next certificate goes here</strong>
+            <span style="font-family:var(--font-mono); font-size:11.5px;">Empty by design — this updates the moment I earn one.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESUME COMMAND CENTER ============ -->
+    <section id="resume">
+      <div class="container">
+        <div class="glass resume-panel reveal">
+          <div class="eyebrow">Resume Command Center</div>
+          <h2 class="section-title">Pull my resume</h2>
+          <div class="resume-term">$ <span>resume</span> --status <span>"up to date"</span></div>
+          <div class="resume-actions">
+            <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-solid fa-eye"></i> View Resume</a>
+            <a href="assets/resume.pdf" download class="btn btn-ghost"><i class="fa-solid fa-download"></i> Download Resume</a>
+            <button class="btn btn-ghost" id="printResume"><i class="fa-solid fa-print"></i> Print Resume</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="glass contact-card reveal">
+          <div class="eyebrow">Get in touch</div>
+          <h2 class="section-title">Let's talk</h2>
+          <div class="contact-links">
+            <div class="contact-row">
+              <span class="icon-link"><i class="fa-brands fa-github"></i></span>
+              <div class="meta"><span class="label">GITHUB</span><span class="value" data-contact="github">https://github.com/harikarasuthan-39</span></div>
+            </div>
+            <div class="contact-row">
+              <span class="icon-link"><i class="fa-brands fa-linkedin-in"></i></span>
+              <div class="meta"><span class="label">LINKEDIN</span><span class="value" data-contact="linkedin">linkedin.com/in/harikara-suthan</span></div>
+            </div>
+            <div class="contact-row">
+              <span class="icon-link"><i class="fa-solid fa-envelope"></i></span>
+              <div class="meta"><span class="label">EMAIL</span><span class="value" data-contact="email">hariharasuthan.sha@gmail.com</span></div>
+            </div>
+            <div class="contact-row">
+              <span class="icon-link"><i class="fa-solid fa-phone"></i></span>
+              <div class="meta"><span class="label">PHONE</span><span class="value" data-contact="phone">+91 8122911672</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="glass contact-cta reveal">
+          <div class="eyebrow">Open to</div>
+          <h3 class="section-title" style="font-size:28px;">Internships &amp; collaborations</h3>
+          <p style="color:var(--gray)">If you're hiring for AI/ML internships, or just want to compare notes on learning this field, my inbox is open.</p>
+          <a href="#" class="btn btn-primary" data-contact-cta><i class="fa-solid fa-paper-plane"></i> Say hello</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ AI ASSISTANT ============ -->
+  <button id="ai-toggle" aria-label="Open AI assistant"><i class="fa-solid fa-robot"></i></button>
+  <div id="ai-panel" class="glass">
+    <div class="ai-head">
+      <span class="dot"></span>
+      <div>
+        <strong>Hari's Guide</strong>
+        <small>A simple rule-based guide, not a real AI model</small>
+      </div>
+    </div>
+    <div class="ai-body" id="aiBody">
+      <div class="ai-msg bot">Hi! I'm a simple guide bot for this site — not an actual AI model. Tap a topic below, or type something like "skills" or "contact".</div>
+    </div>
+    <div class="ai-quick">
+      <button data-q="projects">Projects</button>
+      <button data-q="skills">Skills</button>
+      <button data-q="resume">Resume</button>
+      <button data-q="contact">Contact</button>
+    </div>
+    <div class="ai-input-row">
+      <input type="text" id="aiInput" placeholder="Ask me something…" aria-label="Message">
+      <button id="aiSend" aria-label="Send"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">Harikara Suthan</div>
+        <div class="footer-tag">Designed &amp; built while learning — one model at a time.</div>
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="icon-link" data-social="github" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="icon-link" data-social="linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="icon-link" data-social="email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <div class="footer-tag">© 2026 Harikara Suthan</div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
